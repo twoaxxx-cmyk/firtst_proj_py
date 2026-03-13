@@ -9,10 +9,6 @@ bot = telebot.TeleBot(TOKEN)
 def send_welcome(message):
     bot.reply_to(message, "Привет! Я твой первый бот и я работаю!")
 
-@bot.message_handler(func=lambda message: True)
-def echo_all(message):
-    bot.reply_to(message, f"Ты написал: {message.text}")
-
 @bot.message_handler(commands=['help'])
 def send_help(message):
     help_text = "Я умею:\n"
